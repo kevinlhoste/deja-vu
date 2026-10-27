@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Déjà Vu">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f0e13">
+  <title>Déjà Vu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Déjà <span>Vu</span></h1>
+    <div class="counter" id="counter"></div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button data-view="swipe" class="active">Swipe</button>
+    <button data-view="list">Ma liste</button>
+    <button data-view="stats">Bilan</button>
+  </nav>
+
+  <main>
+    <section id="view-swipe" class="view active">
+      <div class="filters">
+        <div class="chips" id="kind-chips"></div>
+        <div class="chips" id="period-chips"></div>
+      </div>
+      <div class="deck" id="deck"></div>
+      <div class="actions">
+        <button class="act undo" id="btn-undo" title="Annuler (Retour arrière)">↩</button>
+        <button class="act no" id="btn-no" title="Pas vu (←)">✕</button>
+        <button class="act unsure" id="btn-unsure" title="Pas sûr (↓)">🤔</button>
+        <button class="act want" id="btn-want" title="À voir (↑)">☆</button>
+        <button class="act yes" id="btn-yes" title="Vu (→)">✓</button>
+      </div>
+    </section>
+
+    <section id="view-list" class="view">
+      <input type="search" id="search" placeholder="Chercher un titre, un réalisateur…" autocomplete="off">
+      <div id="list"></div>
+    </section>
+
+    <section id="view-stats" class="view">
+      <div id="stats"></div>
+      <div class="io">
+        <button id="btn-export-md">Copier pour Obsidian</button>
+        <button id="btn-lb-seen">Letterboxd : vus</button>
+        <button id="btn-lb-want">Letterboxd : à voir</button>
+        <button id="btn-export-json">Sauvegarder (JSON)</button>
+        <label class="btn">Restaurer<input type="file" id="import-json" accept="application/json" hidden></label>
+        <button id="btn-reset" class="danger">Tout effacer</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="sheet" id="stars-sheet" hidden>
+    <p><strong id="stars-title"></strong><span id="stars-hint">Tu as aimé ?</span></p>
+    <div class="stars" id="stars"></div>
+    <button class="skip" id="stars-skip">Passer</button>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="data/catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

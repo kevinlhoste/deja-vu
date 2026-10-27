@@ -1,0 +1,16 @@
+{
+  "name": "Déjà Vu",
+  "short_name": "Déjà Vu",
+  "description": "Les films et séries que j'ai vus depuis 1983, en swipant.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f0e13",
+  "theme_color": "#0f0e13",
+  "icons": [
+    { "src": "icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
